@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="حذاء تشيلسي Salviano Chelsea Boot من OLVARO. الدفع عند الاستلام مع المعاينة قبل الدفع، وتوصيل لولايات الجزائر.">
+<title>OLVARO STORE</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+:root{--bg:#f4f4f4;--white:#fff;--black:#000;--text:#1a1a1a;--gray:#666;--line:#e0e0e0;--green:#2e7d32;--red:#d32f2f}
+*{box-sizing:border-box;margin:0;padding:0;font-family:'Cairo',sans-serif}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);line-height:1.6}
+[hidden]{display:none!important}
+header{background:var(--white);padding:12px 20px;position:sticky;top:0;z-index:100;box-shadow:0 2px 10px rgba(0,0,0,.05);border-bottom:1px solid var(--line);text-align:center}
+header img{height:36px;width:auto;display:inline-block}
+main{max-width:1200px;margin:20px auto;padding:0 20px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+.gallery{background:var(--white);padding:20px;border-radius:15px}
+.main-image{aspect-ratio:4/5;background:#f9f9f9;border-radius:10px;overflow:hidden}
+.main-image img{width:100%;height:100%;object-fit:cover;display:block}
+.thumbs{display:flex;gap:10px;justify-content:center;margin-top:15px;overflow-x:auto}
+.thumbs img{width:70px;height:70px;object-fit:cover;border-radius:8px;cursor:pointer;border:2px solid transparent;flex:none}
+.thumbs img.active{border-color:var(--black)}
+.details{padding:20px 0;display:flex;flex-direction:column}
+.title{font-size:2rem;font-weight:700;margin-bottom:5px}
+.trust{color:var(--gray);font-size:.9rem;margin-bottom:15px}
+.trust i{color:var(--green);margin-left:5px}
+.price{display:flex;align-items:baseline;gap:12px;margin-bottom:20px}
+.price b{font-size:1.8rem}
+.price s{color:#999}
+.label{font-weight:600;margin-bottom:10px;display:block}
+.sizes{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:8px}
+.size-btn{width:54px;height:50px;border:1px solid var(--line);background:var(--white);border-radius:8px;font-weight:600;font-size:1rem;cursor:pointer;transition:.2s}
+.size-btn:hover{border-color:var(--black)}
+.size-btn.selected{background:var(--black);color:var(--white);border-color:var(--black)}
+.note{color:var(--red);font-size:.9rem;font-weight:600;margin-bottom:12px}
+.qty{display:flex;justify-content:space-between;align-items:center;gap:10px;margin:15px 0;background:#fafafa;padding:10px 15px;border-radius:8px;border:1px solid var(--line)}
+.stepper{display:flex;align-items:center;gap:15px;font-size:1.2rem;font-weight:600}
+.stepper button{background:var(--white);border:1px solid var(--line);width:32px;height:32px;border-radius:5px;cursor:pointer;font-size:1.1rem}
+.offer{text-align:left;font-size:.9rem;color:var(--gray)}
+.offer b{display:block;color:var(--text);font-size:1.05rem}
+.actions{display:flex;flex-direction:column;gap:10px;margin-bottom:30px}
+.btn{border:0;padding:15px;border-radius:10px;font-size:1.1rem;font-weight:600;cursor:pointer;display:flex;justify-content:center;align-items:center;gap:10px;text-decoration:none;color:var(--white);transition:.2s}
+.btn-primary{background:var(--black)}
+.btn-primary:hover{opacity:.9}
+.btn-primary:disabled{background:#888;cursor:wait}
+.btn-wa{background:#25D366}
+.btn-wa:hover{background:#1ebe5d}
+.desc{border-top:1px solid var(--line);padding-top:20px}
+.desc h3{margin:0 0 12px;font-size:1.3rem}
+.desc p{color:var(--gray);margin-bottom:15px;font-size:.95rem}
+.desc ul{list-style:none;margin-bottom:20px}
+.desc li{position:relative;padding-right:25px;margin-bottom:10px;color:var(--gray);font-size:.95rem}
+.desc li::before{content:'\f00c';font-family:'Font Awesome 6 Free';font-weight:900;position:absolute;right:0;color:var(--green)}
+footer{background:var(--black);color:var(--white);padding:40px 20px;margin-top:50px;text-align:center}
+footer img{height:34px;width:auto;filter:invert(1);mix-blend-mode:screen;margin-bottom:12px}
+footer p{color:#ccc;margin-bottom:10px}
+footer a{color:var(--white);text-decoration:none;display:block;margin-bottom:5px}
+.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:1000;justify-content:center;align-items:center;padding:20px}
+.overlay.open{display:flex}
+.modal{background:var(--white);width:100%;max-width:500px;border-radius:15px;padding:25px;max-height:92vh;overflow-y:auto;position:relative}
+.close{position:absolute;top:12px;left:12px;background:none;border:0;font-size:1.5rem;cursor:pointer;color:var(--gray)}
+.modal h2{text-align:center;margin-bottom:18px}
+.field{margin-bottom:14px}
+.field label{display:block;margin-bottom:5px;font-size:.9rem;font-weight:600}
+.field input,.field select{width:100%;padding:12px;border:1px solid var(--line);border-radius:8px;font-size:1rem}
+.field input:focus,.field select:focus{outline:2px solid var(--black);outline-offset:1px}
+.err{border-color:var(--red)!important}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.dopts{display:flex;gap:10px}
+.dopt{flex:1;padding:10px;border:1px solid var(--line);border-radius:8px;text-align:center;cursor:pointer;font-weight:600;font-size:.92rem;margin:0!important}
+.dopt input{position:absolute;opacity:0;width:1px}
+.dopt:has(input:checked){background:var(--black);color:var(--white);border-color:var(--black)}
+.dopt.off{opacity:.4;pointer-events:none}
+.dopt small{display:block;font-weight:400;min-height:1.4em}
+.sum{border-top:1px solid var(--line);padding-top:12px;margin-top:18px}
+.row{display:flex;justify-content:space-between;gap:10px;margin-bottom:8px;font-size:.95rem}
+.row.total{font-weight:700;font-size:1.2rem;border-top:1px solid var(--line);padding-top:10px;margin-top:10px}
+.msg{background:#fdecea;color:#a12622;border-radius:8px;padding:10px 12px;font-size:.9rem;margin-top:14px}
+.done{text-align:center;padding:10px 0}
+.done i{font-size:3rem;color:var(--green);margin-bottom:12px}
+.bar{display:none}
+@media(max-width:768px){
+ main{grid-template-columns:1fr;gap:20px}
+ .title{font-size:1.6rem}
+ body{padding-bottom:78px}
+ .bar{display:flex;position:fixed;bottom:0;inset-inline:0;background:var(--white);border-top:1px solid var(--line);padding:10px 16px;align-items:center;justify-content:space-between;gap:12px;z-index:90}
+ .bar b{font-size:1.15rem}
+ .bar .btn{padding:12px 24px;font-size:1rem}
+}
+</style>
+</head>
+<body>
+<header><img src="assets/images/logo.jpg" alt="OLVARO"></header>
+
+<main>
+ <section class="gallery">
+  <div class="main-image"><img id="mainImg" alt=""></div>
+  <div class="thumbs" id="thumbs"></div>
+ </section>
+
+ <section class="details">
+  <h1 class="title" id="title"></h1>
+  <div class="trust"><i class="fa-solid fa-circle-check"></i>الدفع عند الاستلام مع إمكانية المعاينة قبل الدفع</div>
+  <div class="price"><b id="price"></b><s id="oldPrice"></s></div>
+
+  <span class="label">اختر المقاس <span style="color:var(--red)">*</span></span>
+  <div class="sizes" id="sizes"></div>
+  <div class="note" id="sizeMsg" hidden>الرجاء اختيار المقاس أولاً.</div>
+
+  <div class="qty">
+   <div class="stepper">
+    <button type="button" id="plus" aria-label="زيادة">+</button>
+    <span id="qty">1</span>
+    <button type="button" id="minus" aria-label="نقصان">−</button>
+   </div>
+   <div class="offer"><span id="offerLabel"></span><b id="offerTotal"></b></div>
+  </div>
+
+  <div class="actions">
+   <button type="button" class="btn btn-primary" id="openBtn"><i class="fa-solid fa-bag-shopping"></i> اطلب الآن (الدفع عند الاستلام)</button>
+   <a class="btn btn-wa" id="wa" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i> تواصل معنا عبر واتساب</a>
+  </div>
+
+  <div class="desc">
+   <h3>وصف المنتج</h3>
+   <p id="desc"></p>
+   <ul id="features"></ul>
+   <h3>لماذا هذا الحذاء؟</h3>
+   <ul>
+    <li><strong>راحة طوال اليوم:</strong> خامات ناعمة ومريحة لقدميك.</li>
+    <li><strong>متانة:</strong> شمواه صناعي عالي الجودة وخياطة متقنة.</li>
+    <li><strong>ثبات:</strong> نعل سميك مقاوم للانزلاق.</li>
+    <li><strong>سهولة الارتداء:</strong> أشرطة جانبية مرنة.</li>
+   </ul>
+  </div>
+ </section>
+</main>
+
+<footer>
+ <img src="assets/images/logo.jpg" alt="OLVARO">
+ <p>أحذية راقية توصل إلى باب منزلك.</p>
+ <div id="contact" style="margin-top:16px"></div>
+ <p style="font-size:.8rem;margin-top:18px">© 2026 OLVARO Store. جميع الحقوق محفوظة.</p>
+</footer>
+
+<div class="bar"><div><small>المجموع</small><br><b id="barTotal"></b></div><button type="button" class="btn btn-primary" id="barBtn">اطلب الآن</button></div>
+
+<div class="overlay" id="modal" role="dialog" aria-modal="true" aria-labelledby="mTitle">
+ <div class="modal">
+  <button type="button" class="close" id="closeBtn" aria-label="إغلاق"><i class="fa-solid fa-xmark"></i></button>
+
+  <div id="formWrap">
+   <h2 id="mTitle">تأكيد الطلب</h2>
+   <form id="form" novalidate>
+    <div class="hp"><input id="website" tabindex="-1" autocomplete="off" aria-hidden="true"></div>
+    <div class="field"><label for="name">الاسم الكامل</label><input id="name" autocomplete="name" placeholder="الاسم واللقب"></div>
+    <div class="field"><label for="phone">رقم الهاتف</label><input id="phone" type="tel" inputmode="numeric" autocomplete="tel" placeholder="05XXXXXXXX"></div>
+    <div class="field"><label for="wilaya">الولاية</label><select id="wilaya"><option value="">اختر الولاية...</option></select></div>
+    <div class="field">
+     <label>طريقة التوصيل</label>
+     <div class="dopts">
+      <label class="dopt" id="opt-home"><input type="radio" name="dtype" value="home" checked>إلى المنزل<small id="p-home"></small></label>
+      <label class="dopt" id="opt-office"><input type="radio" name="dtype" value="office">إلى المكتب<small id="p-office"></small></label>
+     </div>
+    </div>
+    <div class="field"><label for="commune">البلدية</label><input id="commune" placeholder="اسم البلدية"></div>
+    <div class="field"><label for="address">العنوان بالتفصيل <span id="addrReq">*</span><span id="addrOpt" hidden>(اختياري)</span></label><input id="address" autocomplete="street-address" placeholder="الحي، الشارع، رقم المنزل"></div>
+
+    <div class="sum">
+     <div class="row"><span>المقاس</span><span id="sSize"></span></div>
+     <div class="row"><span>المنتج</span><span id="sProd"></span></div>
+     <div class="row"><span>التوصيل</span><span id="sShip"></span></div>
+     <div class="row total"><span>المجموع الكلي</span><span id="sTotal"></span></div>
+    </div>
+    <div class="msg" id="msg" hidden role="alert"></div>
+    <button type="submit" class="btn btn-primary" id="submitBtn" style="width:100%;margin-top:18px"><i class="fa-solid fa-check"></i> إتمام الطلب</button>
+   </form>
+  </div>
+
+  <div class="done" id="done" hidden>
+   <i class="fa-solid fa-circle-check"></i>
+   <h2>تم تسجيل طلبك</h2>
+   <p>رقم الطلب <b id="orderId"></b><br>سنتصل بك قريباً لتأكيد التوصيل.</p>
+   <button type="button" class="btn btn-primary" style="width:100%;margin-top:18px" onclick="location.reload()">حسناً</button>
+  </div>
+ </div>
+</div>
+
+<script src="data.js"></script>
+<script>
+const D = STORE_DATA, P = D.product;
+const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
+const fmt = n => Number(n).toLocaleString('en-US') + ' د.ج';
+const maxQty = Object.keys(D.offers).length;
+let qty = 1, size = null, type = 'home', sending = false;
+
+/* ---- عرض البيانات (كلها من data.js) ---- */
+document.title = 'OLVARO STORE - ' + P.name;
+$('#title').textContent = P.name;
+$('#price').textContent = fmt(P.price);
+if (P.oldPrice > P.price) $('#oldPrice').textContent = fmt(P.oldPrice);
+$('#desc').textContent = P.description;
+$('#features').innerHTML = P.features.map(f => `<li>${f}</li>`).join('');
+$('#mainImg').src = P.images[0]; $('#mainImg').alt = P.name;
+$('#thumbs').innerHTML = P.images.map((s, i) => `<img src="${s}" alt="صورة ${i + 1}" class="${i ? '' : 'active'}">`).join('');
+$('#thumbs').onclick = e => {
+  if (e.target.tagName !== 'IMG') return;
+  $('#mainImg').src = e.target.getAttribute('src');
+  $$('#thumbs img').forEach(i => i.classList.toggle('active', i === e.target));
+};
+$('#sizes').innerHTML = P.sizes.map(s => `<button type="button" class="size-btn" data-size="${s}">${s}</button>`).join('');
+$('#sizes').onclick = e => {
+  const b = e.target.closest('.size-btn'); if (!b) return;
+  size = b.dataset.size;
+  $$('.size-btn').forEach(x => x.classList.toggle('selected', x === b));
+  $('#sizeMsg').hidden = true; update();
+};
+$('#wa').href = `https://wa.me/${D.whatsapp}?text=${encodeURIComponent('مرحباً، أريد الاستفسار عن حذاء ' + P.name)}`;
+$('#contact').innerHTML =
+  `<a href="mailto:${D.email}"><i class="fa-solid fa-envelope"></i> ${D.email}</a>` +
+  `<a href="tel:${D.phone}"><i class="fa-solid fa-phone"></i> ${D.phone}</a>`;
+
+const sel = $('#wilaya');
+D.states.forEach((n, i) => {
+  const d = D.delivery[i + 1], ok = d && (d.home !== null || d.office !== null);
+  const o = new Option(`${i + 1} - ${n}${ok ? '' : ' (غير متاح)'}`, i + 1); o.disabled = !ok; sel.add(o);
+});
+
+/* ---- الكمية والعروض ---- */
+function setQty(c) { qty = Math.min(maxQty, Math.max(1, qty + c)); update(); }
+$('#plus').onclick = () => setQty(1);
+$('#minus').onclick = () => setQty(-1);
+
+/* ---- التحديث الشامل للأسعار ---- */
+function update() {
+  const offer = D.offers[qty], d = D.delivery[sel.value];
+  $('#qty').textContent = qty;
+  $('#offerLabel').textContent = offer.label;
+  $('#offerTotal').textContent = fmt(offer.price);
+  $('#barTotal').textContent = fmt(offer.price);
+  ['home', 'office'].forEach(t => {
+    const v = d ? d[t] : null;
+    $('#opt-' + t).classList.toggle('off', !!d && v === null);
+    $('#p-' + t).textContent = d ? (v === null ? 'غير متاح' : fmt(v)) : '';
+  });
+  if (d && d[type] === null) { type = d.home !== null ? 'home' : 'office'; $(`input[value=${type}]`).checked = true; }
+  const ship = d ? d[type] : null;
+  $('#sSize').textContent = size || '—';
+  $('#sProd').textContent = `${offer.label}: ${fmt(offer.price)}`;
+  $('#sShip').textContent = d ? fmt(ship) : 'اختر الولاية';
+  $('#sTotal').textContent = d ? fmt(offer.price + ship) : fmt(offer.price) + ' + التوصيل';
+  $('#addrReq').hidden = type !== 'home'; $('#addrOpt').hidden = type === 'home';
+}
+sel.onchange = update;
+$$('input[name=dtype]').forEach(r => r.onchange = () => { type = r.value; update(); });
+
+/* ---- النافذة ---- */
+function openModal() {
+  if (!size) {
+    $('#sizeMsg').hidden = false;
+    $('#sizes').scrollIntoView({ behavior: 'smooth', block: 'center' });
+    return;
+  }
+  $('#modal').classList.add('open'); document.body.style.overflow = 'hidden'; update(); $('#name').focus();
+}
+function closeModal() { $('#modal').classList.remove('open'); document.body.style.overflow = ''; }
+$('#openBtn').onclick = $('#barBtn').onclick = openModal;
+$('#closeBtn').onclick = closeModal;
+$('#modal').onclick = e => { if (e.target.id === 'modal') closeModal(); };
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+/* ---- الإرسال ---- */
+const msg = t => { const m = $('#msg'); m.textContent = t; m.hidden = !t; };
+$('#form').onsubmit = async e => {
+  e.preventDefault(); if (sending) return;
+  msg(''); $$('.err').forEach(x => x.classList.remove('err'));
+  const v = id => $('#' + id).value.trim();
+  const phone = v('phone').replace(/[\s.-]/g, '');
+  const bad = [];
+  if (v('name').length < 3) bad.push('name');
+  if (!/^0[567]\d{8}$/.test(phone)) bad.push('phone');
+  if (!sel.value) bad.push('wilaya');
+  if (v('commune').length < 2) bad.push('commune');
+  if (type === 'home' && v('address').length < 5) bad.push('address');
+  if (bad.length) {
+    bad.forEach(id => $('#' + id).classList.add('err'));
+    msg('تحقق من الحقول المحددة بالأحمر (رقم الهاتف يبدأ بـ 05 أو 06 أو 07).');
+    $('#' + bad[0]).focus(); return;
+  }
+  const d = D.delivery[sel.value];
+  if (!d || d[type] === null) return msg('هذا النوع من التوصيل غير متاح لهذه الولاية.');
+
+  sending = true;
+  const btn = $('#submitBtn'), old = btn.innerHTML;
+  btn.disabled = true; btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> جاري الإرسال...';
+  try {
+    const r = await fetch('/.netlify/functions/order', {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        fullName: v('name'), phone, state: `${sel.value} - ${D.states[sel.value - 1]}`,
+        commune: v('commune'), address: v('address'), size, quantity: String(qty),
+        deliveryType: type, website: v('website')
+      })
+    });
+    const j = await r.json().catch(() => ({}));
+    if (!r.ok) throw new Error(j.error || 'تعذر إرسال الطلب، حاول مرة أخرى.');
+    $('#orderId').textContent = j.id ? '#' + j.id : '';
+    $('#formWrap').hidden = true; $('#done').hidden = false;
+  } catch (err) {
+    msg(err instanceof TypeError ? 'تعذر الاتصال بالخادم. تحقق من الإنترنت أو تواصل معنا عبر واتساب.' : err.message);
+    btn.disabled = false; btn.innerHTML = old;
+  } finally { sending = false; }
+};
+update();
+</script>
+</body>
+</html>
